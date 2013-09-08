@@ -21,7 +21,8 @@
   <link rel="stylesheet" href="../extensions/status/deck.status.css">-->
 	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
 	<link rel="stylesheet" href="../extensions/scale/deck.scale.css">
-	
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">  
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
 	<link rel="stylesheet" href="../themes/style/web-2.0.css">
 	
@@ -34,9 +35,157 @@
 <body class="deck-container">
 
 <!-- Begin slides -->
-<section class="slide" id="title-slide">
-	<h1>Firefox OS Oslo Work Week</h1>
+
+<section class="slide" id="welcome">
+  <h1 style="color:#4D4E53;">Firefox OS<br />Oslo Work Week</h1>
+  <img src='https://assets.mozillalabs.com/Brands-Logos/Firefox/logo-only/firefox_logo-only_RGB.png' />
+  <h2 style='text-align:right'>Torgeir Hovden, CTO Telenor Digital</h2>
 </section>
+
+
+<section class="slide" id="share" style='background-image: url(http://upload.wikimedia.org/wikipedia/commons/a/a5/Telenor_world_locations_2009.png); background-size: 100% 100%;'>
+</section>
+
+<section class="slide" id="dinosaur" style='background:white;'>
+  <img src='http://upload.wikimedia.org/wikipedia/commons/5/5c/Mozilla_dinosaur_head_logo.png' />
+</section>
+
+<section class="slide" id="golden_days" style='background-image: url(http://www.soaphia.com/presentations/intro2web/mosaic-1-0.gif); background-size: 100% 100%;'>
+  <!--<img style='top:100px;left:0px;' src='http://condor.cc.ku.edu/~grobe/docs/forms-intro-graphics/cgi-example.jpg' />-->
+</section>
+
+ <section class="slide" id="client-side" style='text-align: center;'>
+  <h2>HMTL, CSS and Javascript = Rich Clients</h2>
+  <img style='display:inline;' src='http://courses.washington.edu/css233/projects/teama/Pictures/jsLogo.png' />
+  <img style='display:inline;' src='http://courses.washington.edu/css233/projects/teama/Pictures/css3Logo.png' />
+  <img style='display:inline;' src='http://courses.washington.edu/css233/projects/teama/Pictures/html5Logo.png' />
+	
+</section>
+
+<section class='slide' id='demos'>
+  <style>
+    .container {
+      width: 600px;
+      height: 600px;
+      position: relative;
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+    }
+
+    #cube {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform 1s;
+      transition: transform 1s;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    #cube figure {
+      width: 600px;
+      height: 600px;
+      display: block;
+      position: absolute;
+      border: 0px solid black;
+    }
+
+    #cube .front  {
+      -webkit-transform: translateZ( 100px );
+         -moz-transform: translateZ( 100px );
+           -o-transform: translateZ( 100px );
+              transform: translateZ( 100px );
+    }
+    #cube .back   {
+      -webkit-transform: rotateX( -180deg ) translateZ( 100px );
+         -moz-transform: rotateX( -180deg ) translateZ( 100px );
+           -o-transform: rotateX( -180deg ) translateZ( 100px );
+              transform: rotateX( -180deg ) translateZ( 100px );
+    }
+    #cube .right {
+      -webkit-transform: rotateY(   90deg ) translateZ( 100px );
+         -moz-transform: rotateY(   90deg ) translateZ( 100px );
+           -o-transform: rotateY(   90deg ) translateZ( 100px );
+              transform: rotateY(   90deg ) translateZ( 100px );
+    }
+    #cube .left {
+      -webkit-transform: rotateY(  -90deg ) translateZ( 100px );
+         -moz-transform: rotateY(  -90deg ) translateZ( 100px );
+           -o-transform: rotateY(  -90deg ) translateZ( 100px );
+              transform: rotateY(  -90deg ) translateZ( 100px );
+    }
+    #cube .top {
+      -webkit-transform: rotateX(   90deg ) translateZ( 100px );
+         -moz-transform: rotateX(   90deg ) translateZ( 100px );
+           -o-transform: rotateX(   90deg ) translateZ( 100px );
+              transform: rotateX(   90deg ) translateZ( 100px );
+    }
+    #cube .bottom {
+      -webkit-transform: rotateX(  -90deg ) translateZ( 100px );
+         -moz-transform: rotateX(  -90deg ) translateZ( 100px );
+           -o-transform: rotateX(  -90deg ) translateZ( 100px );
+              transform: rotateX(  -90deg ) translateZ( 100px );
+    }
+
+    #cube.show-front {
+      -webkit-transform: translateZ( -100px );
+         -moz-transform: translateZ( -100px );
+           -o-transform: translateZ( -100px );
+              transform: translateZ( -100px );
+    }
+    #cube.show-back {
+      -webkit-transform: translateZ( -100px ) rotateX( -180deg );
+         -moz-transform: translateZ( -100px ) rotateX( -180deg );
+           -o-transform: translateZ( -100px ) rotateX( -180deg );
+              transform: translateZ( -100px ) rotateX( -180deg );
+    }
+    #cube.show-right {
+      -webkit-transform: translateZ( -100px ) rotateY(  -90deg );
+         -moz-transform: translateZ( -100px ) rotateY(  -90deg );
+           -o-transform: translateZ( -100px ) rotateY(  -90deg );
+              transform: translateZ( -100px ) rotateY(  -90deg );
+    }
+    #cube.show-left {
+      -webkit-transform: translateZ( -100px ) rotateY(   90deg );
+         -moz-transform: translateZ( -100px ) rotateY(   90deg );
+           -o-transform: translateZ( -100px ) rotateY(   90deg );
+              transform: translateZ( -100px ) rotateY(   90deg );
+    }
+    #cube.show-top {
+      -webkit-transform: translateZ( -100px ) rotateX(  -90deg );
+         -moz-transform: translateZ( -100px ) rotateX(  -90deg );
+           -o-transform: translateZ( -100px ) rotateX(  -90deg );
+              transform: translateZ( -100px ) rotateX(  -90deg );
+    }
+    #cube.show-bottom {
+      -webkit-transform: translateZ( -100px ) rotateX(   90deg );
+         -moz-transform: translateZ( -100px ) rotateX(   90deg );
+           -o-transform: translateZ( -100px ) rotateX(   90deg );
+              transform: translateZ( -100px ) rotateX(   90deg );
+    }
+  </style>
+
+  <div class="container">
+    <div id="cube" class="front">
+      <figure class="front" style='background:red;' >
+        <h1>DEMO TIME!</h1>
+      </figure>
+      <figure class="back" style='background:blue;'>
+        <img src='https://appear.in/images/AppearinLogoNoText.png' class='clickToLoad' data-src='https://appear.in/fx' />
+      </figure>
+      <figure class="right" style='background:yellow;'>
+        <img src='https://www.comoyo.com/no/smsplus/images/icon_shadow.png' class='clickToLoad' data-src='http://olavhn.github.io/sms.js' />
+      </figure>
+      <figure class="left" style='background:orange;'>
+        <img src='https://lh3.ggpht.com/xcFBpvS5s_xJj6Kqp7I6EiqUzYx0nsKa9QkxbCKJcg_ARw_pQyrLR-UI2Z2ytLebQ_FV=w300-rw' class='clickToLoad' data-src='http://olavhn.github.io/sms.js/talkp/' />
+      </figure>
+      <figure class="top">5</figure>
+      <figure class="bottom">6</figure>
+    </div>
+  </section>
+</section>  
 
 <section class="slide" id="appear-in">
 	<h2>webRTC on Firefox OS</h2>
@@ -66,6 +215,36 @@
   
 
   <img src='https://lh3.ggpht.com/xcFBpvS5s_xJj6Kqp7I6EiqUzYx0nsKa9QkxbCKJcg_ARw_pQyrLR-UI2Z2ytLebQ_FV=w300-rw' class='clickToLoad' data-src='http://olavhn.github.io/sms.js/talkp/' />
+</section>
+
+<section class="slide" id="penetration" style='background-image: url(http://upload.wikimedia.org/wikipedia/commons/a/af/Internet_Penetration.png); background-size: 100% 100%;'>
+</section>
+
+<section class="slide" id="penetration-graph" style='background-image: url(internet-graph.gif); background-size: 100% 100%;'>
+</section>
+
+<section class="slide" id="mobile-trend">
+	<h2>People will get online through mobile</h2>
+  <img src='http://trak.in/wp-content/uploads/2012/12/mobile-vs-desktop-traffic_thumb.jpg' />
+</section>
+
+<section class="slide" id="internet-for-all" style='background: url(http://www.google.com/loon/images/globe-semi.png) no-repeat bottom; background-size: 100% auto';'>
+	<h2>Internet for all</h2>
+  <img src='internet-for-all.png' />
+</section>
+
+<section class="slide" id="os" style='text-align:center;'>
+	<h2>So what smartphone OS will the next billion people get?</h2>
+  <img style='display:inline;height:500px;width:auto;' src='http://img.gawkerassets.com/img/183o77h42th0ajpg/original.jpg' />
+  <img style='display:inline;height:500px;width:auto;' src='fxos.png' />
+  <img style='display:inline;height:500px;width:auto;' src='http://blog.cvr.cc/wp-content/uploads/2012/08/nexus-main1.png' />
+  <img style='display:inline;height:500px;width:auto;' src='ios.png' />
+</section>
+
+<section class="slide" id="happy-hacking" style='background:  url(http://www.onbile.com/info/wp-content/uploads/2012/10/boot2gecko.png) no-repeat; background-size: contain;'>
+  <h1 style='color:#4D4E53;'>
+    Happy hacking!
+  </h1>
 </section>
 
 <section class="slide" id="how-to-overview">
@@ -231,7 +410,9 @@
 <script>
   // Super simple click to load iframes ..
   Array.prototype.slice.call(document.getElementsByClassName('clickToLoad')).forEach(function(elem) {
+    console.log('clocked', elem);
     elem.onclick = function() {
+      console.log('clicked');
       var src = this.getAttribute('data-src');
       if (src) {
         this.style.visibility = 'collapse';
@@ -242,6 +423,10 @@
         this.parentNode.insertBefore(frame, this);
       }
     };
+  });
+
+  document.addEventListener('click', function(e) {
+    console.log(e);
   });
 </script>
 
