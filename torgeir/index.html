@@ -42,11 +42,7 @@
   <h2 style='text-align:right'>Torgeir Hovden, CTO Telenor Digital</h2>
 </section>
 
-
-<section class="slide" id="share" style='background-image: url(http://upload.wikimedia.org/wikipedia/commons/a/a5/Telenor_world_locations_2009.png); background-size: 100% 100%;'>
-</section>
-
-<section class="slide" id="dinosaur" style='background:white;'>
+<section class="slide" id="dinosaur" >
   <img src='http://upload.wikimedia.org/wikipedia/commons/5/5c/Mozilla_dinosaur_head_logo.png' />
 </section>
 
@@ -54,7 +50,7 @@
   <!--<img style='top:100px;left:0px;' src='http://condor.cc.ku.edu/~grobe/docs/forms-intro-graphics/cgi-example.jpg' />-->
 </section>
 
- <section class="slide" id="client-side" style='text-align: center;'>
+<section class="slide" id="client-side" style='text-align: center;'>
   <h2>HMTL, CSS and Javascript = Rich Clients</h2>
   <img style='display:inline;' src='http://courses.washington.edu/css233/projects/teama/Pictures/jsLogo.png' />
   <img style='display:inline;' src='http://courses.washington.edu/css233/projects/teama/Pictures/css3Logo.png' />
@@ -62,14 +58,20 @@
 	
 </section>
 
+<section class="slide" id="telenor">
+  <h2>So what are we doing about it?</h2>
+  <img src='http://projects.celtic-initiative.org/MARCH/march/UserFiles/image/telenor_transp.gif' />
+</section>
+
 <section class='slide' id='demos'>
   <style>
-    .container {
+    #cube-container {
+      margin: auto;
       width: 600px;
       height: 600px;
       position: relative;
-      -webkit-perspective: 1000px;
-      perspective: 1000px;
+      -webkit-perspective: 3000px;
+      perspective: 3000px;
     }
 
     #cube {
@@ -80,8 +82,6 @@
       transform-style: preserve-3d;
       -webkit-transition: -webkit-transform 1s;
       transition: transform 1s;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
     }
 
     #cube figure {
@@ -93,128 +93,116 @@
     }
 
     #cube .front  {
-      -webkit-transform: translateZ( 100px );
-         -moz-transform: translateZ( 100px );
-           -o-transform: translateZ( 100px );
-              transform: translateZ( 100px );
+      -webkit-transform: translateZ( 300px );
+         -moz-transform: translateZ( 300px );
+           -o-transform: translateZ( 300px );
+              transform: translateZ( 300px );
     }
     #cube .back   {
-      -webkit-transform: rotateX( -180deg ) translateZ( 100px );
-         -moz-transform: rotateX( -180deg ) translateZ( 100px );
-           -o-transform: rotateX( -180deg ) translateZ( 100px );
-              transform: rotateX( -180deg ) translateZ( 100px );
+      -webkit-transform: rotateX( -180deg ) translateZ( 300px );
+         -moz-transform: rotateX( -180deg ) translateZ( 300px );
+           -o-transform: rotateX( -180deg ) translateZ( 300px );
+              transform: rotateX( -180deg ) translateZ( 300px );
     }
     #cube .right {
-      -webkit-transform: rotateY(   90deg ) translateZ( 100px );
-         -moz-transform: rotateY(   90deg ) translateZ( 100px );
-           -o-transform: rotateY(   90deg ) translateZ( 100px );
-              transform: rotateY(   90deg ) translateZ( 100px );
+      -webkit-transform: rotateY(   90deg ) translateZ( 300px );
+         -moz-transform: rotateY(   90deg ) translateZ( 300px );
+           -o-transform: rotateY(   90deg ) translateZ( 300px );
+              transform: rotateY(   90deg ) translateZ( 300px );
     }
     #cube .left {
-      -webkit-transform: rotateY(  -90deg ) translateZ( 100px );
-         -moz-transform: rotateY(  -90deg ) translateZ( 100px );
-           -o-transform: rotateY(  -90deg ) translateZ( 100px );
-              transform: rotateY(  -90deg ) translateZ( 100px );
+      -webkit-transform: rotateY(  -90deg ) translateZ( 300px );
+         -moz-transform: rotateY(  -90deg ) translateZ( 300px );
+           -o-transform: rotateY(  -90deg ) translateZ( 300px );
+              transform: rotateY(  -90deg ) translateZ( 300px );
     }
     #cube .top {
-      -webkit-transform: rotateX(   90deg ) translateZ( 100px );
-         -moz-transform: rotateX(   90deg ) translateZ( 100px );
-           -o-transform: rotateX(   90deg ) translateZ( 100px );
-              transform: rotateX(   90deg ) translateZ( 100px );
+      -webkit-transform: rotateX(   90deg ) translateZ( 300px );
+         -moz-transform: rotateX(   90deg ) translateZ( 300px );
+           -o-transform: rotateX(   90deg ) translateZ( 300px );
+              transform: rotateX(   90deg ) translateZ( 300px );
     }
     #cube .bottom {
-      -webkit-transform: rotateX(  -90deg ) translateZ( 100px );
-         -moz-transform: rotateX(  -90deg ) translateZ( 100px );
-           -o-transform: rotateX(  -90deg ) translateZ( 100px );
-              transform: rotateX(  -90deg ) translateZ( 100px );
+      -webkit-transform: rotateX(  -90deg ) translateZ( 300px );
+         -moz-transform: rotateX(  -90deg ) translateZ( 300px );
+           -o-transform: rotateX(  -90deg ) translateZ( 300px );
+              transform: rotateX(  -90deg ) translateZ( 300px );
     }
 
     #cube.show-front {
-      -webkit-transform: translateZ( -100px );
-         -moz-transform: translateZ( -100px );
-           -o-transform: translateZ( -100px );
-              transform: translateZ( -100px );
+      -webkit-transform: translateZ( -300px );
+         -moz-transform: translateZ( -300px );
+           -o-transform: translateZ( -300px );
+              transform: translateZ( -300px );
     }
     #cube.show-back {
-      -webkit-transform: translateZ( -100px ) rotateX( -180deg );
-         -moz-transform: translateZ( -100px ) rotateX( -180deg );
-           -o-transform: translateZ( -100px ) rotateX( -180deg );
-              transform: translateZ( -100px ) rotateX( -180deg );
+      -webkit-transform: translateZ( -300px ) rotateX( -180deg );
+         -moz-transform: translateZ( -300px ) rotateX( -180deg );
+           -o-transform: translateZ( -300px ) rotateX( -180deg );
+              transform: translateZ( -300px ) rotateX( -180deg );
     }
     #cube.show-right {
-      -webkit-transform: translateZ( -100px ) rotateY(  -90deg );
-         -moz-transform: translateZ( -100px ) rotateY(  -90deg );
-           -o-transform: translateZ( -100px ) rotateY(  -90deg );
-              transform: translateZ( -100px ) rotateY(  -90deg );
+      -webkit-transform: translateZ( -300px ) rotateY(  -90deg );
+         -moz-transform: translateZ( -300px ) rotateY(  -90deg );
+           -o-transform: translateZ( -300px ) rotateY(  -90deg );
+              transform: translateZ( -300px ) rotateY(  -90deg );
     }
     #cube.show-left {
-      -webkit-transform: translateZ( -100px ) rotateY(   90deg );
-         -moz-transform: translateZ( -100px ) rotateY(   90deg );
-           -o-transform: translateZ( -100px ) rotateY(   90deg );
-              transform: translateZ( -100px ) rotateY(   90deg );
+      -webkit-transform: translateZ( -300px ) rotateY(   90deg );
+         -moz-transform: translateZ( -300px ) rotateY(   90deg );
+           -o-transform: translateZ( -300px ) rotateY(   90deg );
+              transform: translateZ( -300px ) rotateY(   90deg );
     }
     #cube.show-top {
-      -webkit-transform: translateZ( -100px ) rotateX(  -90deg );
-         -moz-transform: translateZ( -100px ) rotateX(  -90deg );
-           -o-transform: translateZ( -100px ) rotateX(  -90deg );
-              transform: translateZ( -100px ) rotateX(  -90deg );
+      -webkit-transform: translateZ( -300px ) rotateX(  -90deg );
+         -moz-transform: translateZ( -300px ) rotateX(  -90deg );
+           -o-transform: translateZ( -300px ) rotateX(  -90deg );
+              transform: translateZ( -300px ) rotateX(  -90deg );
     }
     #cube.show-bottom {
-      -webkit-transform: translateZ( -100px ) rotateX(   90deg );
-         -moz-transform: translateZ( -100px ) rotateX(   90deg );
-           -o-transform: translateZ( -100px ) rotateX(   90deg );
-              transform: translateZ( -100px ) rotateX(   90deg );
+      -webkit-transform: translateZ( -300px ) rotateX(   90deg );
+         -moz-transform: translateZ( -300px ) rotateX(   90deg );
+           -o-transform: translateZ( -300px ) rotateX(   90deg );
+              transform: translateZ( -300px ) rotateX(   90deg );
     }
   </style>
 
-  <div class="container">
+  <section id="cube-container">
     <div id="cube" class="front">
       <figure class="front" style='background:red;' >
-        <h1>DEMO TIME!</h1>
+        <h1>iTelco</h1>
       </figure>
-      <figure class="back" style='background:blue;'>
-        <img src='https://appear.in/images/AppearinLogoNoText.png' class='clickToLoad' data-src='https://appear.in/fx' />
+      <figure class="right" style='background:pink; text-align:center;'>
+        <img width='70%' src='https://appear.in/images/AppearinLogoNoText.png' class='clickToLoad' data-src='https://appear.in/fx' />
+        Pure webRTC
       </figure>
-      <figure class="right" style='background:yellow;'>
-        <img src='https://www.comoyo.com/no/smsplus/images/icon_shadow.png' class='clickToLoad' data-src='http://olavhn.github.io/sms.js' />
+      <figure class="back" style='background:yellow; text-align:center;'>
+        <img width='70%' height='auto' src='https://www.comoyo.com/no/smsplus/images/icon_shadow.png' class='clickToLoad' data-src='https://x-persona.herokuapp.com/sms-demo' />
+        SMS over websockets
       </figure>
-      <figure class="left" style='background:orange;'>
-        <img src='https://lh3.ggpht.com/xcFBpvS5s_xJj6Kqp7I6EiqUzYx0nsKa9QkxbCKJcg_ARw_pQyrLR-UI2Z2ytLebQ_FV=w300-rw' class='clickToLoad' data-src='http://olavhn.github.io/sms.js/talkp/' />
+      <figure class="left" style='background:orange; text-align:center;'>
+        <img width='70%' src='talkp.png' class='clickToLoad' data-src='http://olavhn.github.io/sms.js/talkp/' />
+        Telephony over webRTC
+        
       </figure>
-      <figure class="top">5</figure>
-      <figure class="bottom">6</figure>
+      <figure class="top" style='background:green;'>5</figure>
+      <figure class="bottom" style='background:purple;'>6</figure>
     </div>
   </section>
-</section>  
 
-<section class="slide" id="appear-in">
-	<h2>webRTC on Firefox OS</h2>
-	<p>appear.in/fx</p>
-  <img src='https://appear.in/images/AppearinLogoNoText.png' class='clickToLoad' data-src='https://appear.in/fx' />
-	
-</section>
-
-<section class="slide" id="smsplus">
-	<h2>SMS over websocket</h2>
-  <pre><code>
-    var id = new Id();
-    var sms = new Sms();
-    id.login(assertion, function(token) {
-      sms.login(token);
-    });
-
-    sms.on('message', function(message) { alert(message.body); });
-    sms.send('+4741457707', 'Hello Work Week!');
-  </code></pre>
-
-  <img src='https://www.comoyo.com/no/smsplus/images/icon_shadow.png' class='clickToLoad' data-src='http://olavhn.github.io/sms.js' />
-</section>
-
-<section class="slide" id="talkplus">
-	<h2>Telephony over webRTC</h2>
-  
-
-  <img src='https://lh3.ggpht.com/xcFBpvS5s_xJj6Kqp7I6EiqUzYx0nsKa9QkxbCKJcg_ARw_pQyrLR-UI2Z2ytLebQ_FV=w300-rw' class='clickToLoad' data-src='http://olavhn.github.io/sms.js/talkp/' />
+  <button id='next-button'>Next</button>
+  <script>
+    document.getElementById('next-button').onclick = function() {
+      var positions = ['show-back', 'show-left', 'show-right'];
+      var curr = 0;
+      return function() {
+        Array.prototype.slice.call(document.getElementsByTagName('iframe')).forEach(function(elem) {
+          elem.parentNode.removeChild(elem);
+        });
+        document.getElementById('cube').className = positions[curr++ % positions.length];
+      };
+    }();
+  </script>
 </section>
 
 <section class="slide" id="penetration" style='background-image: url(http://upload.wikimedia.org/wikipedia/commons/a/af/Internet_Penetration.png); background-size: 100% 100%;'>
@@ -246,128 +234,6 @@
     Happy hacking!
   </h1>
 </section>
-
-<section class="slide" id="how-to-overview">
-	<h2>How to Make a Deck</h2>
-	<ol>
-		<li>
-			<h3>Write Slides</h3>
-			<p>Slide content is simple&nbsp;HTML.</p>
-		</li>
-		<li>
-			<h3>Choose Themes</h3>
-			<p>One for slide styles and one for deck&nbsp;transitions.</p>
-		</li>
-		<li>
-			<h3>Include Extensions</h3>
-			<p>Add extra functionality to your deck, or leave it stripped&nbsp;down.</p>
-		</li>
-	</ol>
-</section>
-
-<section class="slide" id="markup">
-	<h2>The Markup</h2>
-	<p>Slides are just HTML elements with a class of <code>slide</code>.</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-   &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-   &lt;ol&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Write Slides&lt;/h3&gt;
-         &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Choose Themes&lt;/h3&gt;
-         &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-      &lt;/li&gt;
-      &hellip;
-   &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
-</section>
-
-<section class="slide" id="themes">
-	<h2>Style Themes</h2>
-	<p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-	<h2>Transition Themes</h2>
-	<p>Defines transitions between slides using CSS3 transitions.  Less capable browsers fall back to cutaways. But <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
-</section>
-
-<section class="slide" id="extensions">
-	<h2>Extensions</h2>
-	<p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
-	
-	<ul>
-		<li class="slide" id="extensions-goto">
-			<strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
-		</li>
-		
-		<li class="slide" id="extensions-hash">
-			<strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
-		</li>
-
-		<li class="slide" id="extensions-menu">
-			<strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
-		</li>
-
-		<li class="slide" id="extensions-navigation">
-			<strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-		</li>
-
-		<li class="slide" id="extensions-status">
-			<strong>deck.status</strong>: Adds a page number indicator. (current/total)
-		</li>
-
-		<li class="slide" id="extensions-scale">
-			<strong>deck.scale</strong>: Scales each slide to fit within the deck container using CSS Transforms for those browsers that support them.
-		</li>
-	</ul>
-	
-	<p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
-</section>
-
-<section class="slide" id="nested">
-	<h2>Nested Slides</h2>
-	<p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;		
-  &lt;ul&gt;
-     &lt;li class=&quot;slide&quot;&gt;
-        &lt;h3&gt;deck.goto&lt;/h3&gt;
-        &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;	
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
-</section>
-
-<section class="slide" id="elements-images">
-	<h2>Other Elements: Images</h2>
-	<img src="http://placekitten.com/600/375" alt="Kitties">
-	<pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
-</section>
-
-<section class="slide" id="elements-blockquotes">
-	<h2>Other Elements: Blockquotes</h2>
-	<blockquote cite="http://example.org">
-		<p>Food is an important part of a balanced diet.</p>
-		<p><cite>Fran Lebowitz</cite></p>
-	</blockquote>
-	<pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
-  &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-</section>
-
-
-<section class="slide" id="digging-deeper">
-	<h2>Digging Deeper</h2>
-	<p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a href="../docs/">documentation</a>.</p>
-</section>
-
 <!-- deck.navigation snippet -->
 <!--
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
@@ -410,23 +276,17 @@
 <script>
   // Super simple click to load iframes ..
   Array.prototype.slice.call(document.getElementsByClassName('clickToLoad')).forEach(function(elem) {
-    console.log('clocked', elem);
     elem.onclick = function() {
-      console.log('clicked');
       var src = this.getAttribute('data-src');
       if (src) {
         this.style.visibility = 'collapse';
         var frame = document.createElement('iframe');
         frame.src = src;
-        frame.height = '400';
-        frame.width = '800';
+        frame.height = '100%';
+        frame.width = '100%';
         this.parentNode.insertBefore(frame, this);
       }
     };
-  });
-
-  document.addEventListener('click', function(e) {
-    console.log(e);
   });
 </script>
 
